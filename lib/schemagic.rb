@@ -1,7 +1,6 @@
 require "schemagic/version"
 require "schemagic/railtie"
+require "schemagic/utility"
 
-# TODO: document
-module Schemagic
-  # Your code goes here...
-end
+# Generate JSON schemas from Rails models & Rails models from JSON schemas.
+module Schemagic; end
