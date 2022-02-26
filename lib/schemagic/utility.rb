@@ -37,11 +37,5 @@ module Schemagic
       return path.to_s()
     end
 
-    # @param message [String]
-    # @return [void]
-    def self.echo(message)
-      puts(message)
-    end
-
   end
 end
