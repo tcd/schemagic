@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 
 
+## [0.2.0] - 2022-02-26
+### Notes
+- First working version
+
+
+
 ## [0.1.0] - 2022-02-26
 ### Added
 - Added generator for config file.
