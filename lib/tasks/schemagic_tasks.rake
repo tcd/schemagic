@@ -5,4 +5,10 @@ namespace(:schemagic) do
     puts("this is an example")
   end
 
+  desc("Generate JSON schema from YARD doc comments")
+  task(:from_yard) do
+    # Schemagic::FromYard.generate()
+    Schemagic::Utility.echo("nice")
+  end
+
 end
