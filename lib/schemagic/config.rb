@@ -27,8 +27,11 @@ module Schemagic
     # @return [Pathname]
     def data_folder_path()
       if self.data_folder.blank?()
-        puts(data_folder)
-        raise ::StandardError.new("Schemagic.config.data_folder is blank")
+        if defined?(Rails)
+          self.data_folder = Rails.root.join("app", "schema")
+        else
+          raise ::StandardError.new("Schemagic.config.data_folder is blank")
+        end
       end
       return self.data_folder if self.data_folder.is_a?(Pathname)
       return Pathname.new(self.data_folder)
