@@ -19,7 +19,7 @@ module Schemagic
   #
   # @example
   #   Schemagic.configure do |config|
-  #     config.
+  #     config.data_folder = Rails.root.join("app", "schema")
   #   end
   #
   # @yieldparam [Schemagic::Config] config current Schemagic config
