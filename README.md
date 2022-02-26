@@ -6,7 +6,7 @@ TODO: Short description and motivation.
 
 ## Usage
 
-TODO: How to use my plugin.
+TODO: usage
 
 
 
@@ -18,12 +18,17 @@ Add this line to your application's Gemfile:
 gem "schemagic"
 ```
 
-And then execute:
+Install by running:
 
 ```bash
-bundle
+bundle install
 ```
 
+Generate `config/initializers/schemagic.rb` for configuration:
+
+```bash
+rails g schemagic:initializer
+```
 
 
 ## Contributing
