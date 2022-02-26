@@ -128,7 +128,9 @@ module Schemagic
           return
         end
         if self.class_code_object.attributes.dig(:instance, self.name, :write).nil?()
-          self.is_read_only = true
+          unless self.class_code_object.attributes.dig(:instance, self.name, :read).nil?()
+            self.is_read_only = true
+          end
         end
       end
 
