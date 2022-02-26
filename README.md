@@ -1,10 +1,14 @@
 # Schemagic
 
-Short description and motivation.
+TODO: Short description and motivation.
+
+
 
 ## Usage
 
-How to use my plugin.
+TODO: How to use my plugin.
+
+
 
 ## Installation
 
@@ -20,15 +24,13 @@ And then execute:
 bundle
 ```
 
-Or install it yourself as:
 
-```bash
-gem install schemagic
-```
 
 ## Contributing
 
 TODO: Contribution directions go here.
+
+
 
 ## License
 
