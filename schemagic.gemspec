@@ -10,6 +10,8 @@ Gem::Specification.new do |spec|
   spec.description = spec.summary
   spec.license     = "MIT"
 
+  spec.required_ruby_version = ">= 3.1.0"
+
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the "allowed_push_host"
   # to allow pushing to a single host or delete this section to allow pushing to any host.
   # spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
@@ -24,5 +26,8 @@ Gem::Specification.new do |spec|
   end
 
   spec.add_dependency("rails", ">= 7.0.2.2")
+  spec.add_dependency("yard", "~> 0.9.27")
+
+  spec.add_development_dependency("rubocop", "~> 1.25")
   spec.add_development_dependency("sqlite3")
 end
