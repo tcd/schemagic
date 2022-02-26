@@ -1,0 +1,1 @@
+2022-02-26 Move initializer generator to a rake task
