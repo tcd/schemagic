@@ -1,12 +1,8 @@
 namespace(:schemagic) do
 
-  desc("Explaining what the task does")
-  task(:example) do
-    puts("this is an example")
-  end
-
   desc("Generate JSON schema from YARD doc comments")
   task(:from_yard) do
+    Rake::Task["schemagic:yard:models"].execute()
     Schemagic::FromYard.generate()
   end
 

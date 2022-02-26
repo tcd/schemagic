@@ -42,5 +42,10 @@ module Schemagic
       Dir[Rails.root.join("app/models/**/*.rb")].each { |model| require_relative model }
     end
 
+    # @return [Pathname]
+    def self.yard_db_folder()
+      return Rails.root.join("tmp", "schemagic", ".yardoc").to_s()
+    end
+
   end
 end
