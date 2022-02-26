@@ -35,6 +35,12 @@ rails g schemagic:initializer
 
 TODO: Contribution directions go here.
 
+### Testing Locally
+
+```bash
+./bin/test
+```
+
 
 
 ## License
