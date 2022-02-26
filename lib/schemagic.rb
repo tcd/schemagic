@@ -1,3 +1,5 @@
+require "yard"
+
 require "schemagic/version"
 require "schemagic/errors"
 require "schemagic/config"
