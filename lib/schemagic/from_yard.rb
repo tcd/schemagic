@@ -9,7 +9,7 @@ module Schemagic
 
     # @return [void]
     def self.generate()
-      V3.generate()
+      Generator.generate()
     end
 
     # @return [void``]
