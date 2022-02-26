@@ -1,0 +1,6 @@
+clay:
+  email_address: "dunstontc@gmail.com"
+  phone_number: "1-555-867-5309"
+  age_in_years: 27
+  date_of_birth: <%= Date.new(1994, 4, 21).to_s(:db) %>
+  datetime_of_birth: <%= Date.new(1994, 4, 21, 15, 31, 0).to_s(:db) %>
