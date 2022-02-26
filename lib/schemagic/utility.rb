@@ -2,11 +2,6 @@ module Schemagic
   # Helper methods
   module Utility
 
-    # @return [String]
-    def self.get_working_dir()
-      return Dir.pwd()
-    end
-
     # @param code_object [YARD::CodeObjects::Base]
     # @param tag_name [String]
     # @return [Yard::Tags::Tag]

@@ -10,3 +10,4 @@
 /test/dummy/tmp/
 
 ignore
+.yardoc

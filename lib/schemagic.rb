@@ -1,9 +1,9 @@
 require "schemagic/version"
 require "schemagic/errors"
-require "schemagic/railtie"
-require "schemagic/utility"
 require "schemagic/config"
+require "schemagic/utility"
 # require "schemagic/from_yard"
+require "schemagic/railtie"
 
 # Generate JSON schemas from Rails models & Rails models from JSON schemas.
 module Schemagic
