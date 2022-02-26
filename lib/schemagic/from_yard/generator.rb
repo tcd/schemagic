@@ -5,12 +5,9 @@ module Schemagic
 
       # @return [void]
       def self.generate()
-
-        # Rails.application.eager_load!()
         Schemagic::Utility.load_models()
 
-        yard_path = Rails.root.join(".yardoc").to_s()
-        registry  = YARD::Registry.load(yard_path)
+        registry  = YARD::Registry.load(Schemagic::Utility.yard_db_folder())
         models    = [*ApplicationRecord.descendants]
 
         models.map(&:to_s).each do |name|
@@ -33,16 +30,6 @@ module Schemagic
         FileUtils.mkdir_p(path.parent)
         File.write(path, data, mode: "w+")
         return path
-      end
-
-      # @return [void]
-      def self.debug()
-        # Rails.application.eager_load!()
-        Schemagic::Utility.load_models()
-        yard_path = Rails.root.join(".yardoc").to_s
-        registry  = YARD::Registry.load(yard_path)
-        binding.pry
-        return nil
       end
 
     end

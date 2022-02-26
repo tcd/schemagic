@@ -20,13 +20,16 @@ module Schemagic
         self.data_folder = nil
         self.schema_url = ""
         # self.schema_url = "https://raw.githubusercontent.com/[USERNAME]/[REPO]/master/#{config.data_folder}"
-        # self.data_folder = File.join(Dir.pwd(), "schema")
+        # self.data_folder = File.join(Dir.pwd(), "app", "schema")
       end
     end
 
     # @return [Pathname]
     def data_folder_path()
-      raise Errors::SchemagicError "Schemagic.config.data_folder is blank" if self.data_folder.blank?()
+      if self.data_folder.blank?()
+        puts(data_folder)
+        raise ::StandardError.new("Schemagic.config.data_folder is blank")
+      end
       return self.data_folder if self.data_folder.is_a?(Pathname)
       return Pathname.new(self.data_folder)
     end
