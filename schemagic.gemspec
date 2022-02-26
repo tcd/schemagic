@@ -24,7 +24,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency("rails", ">= 7.0.2.2")
   spec.add_dependency("yard", "~> 0.9.27")
 
-  spec.add_development_dependency("pry", "~> 0.14.1")
+  spec.add_dependency("pry", "~> 0.14.1") # FIXME: change back to dev dep before publishing
   spec.add_development_dependency("rubocop", "~> 1.25")
   spec.add_development_dependency("solargraph", "~> 0.44.3")
   spec.add_development_dependency("sqlite3")
