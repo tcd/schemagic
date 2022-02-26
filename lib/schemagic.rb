@@ -1,4 +1,5 @@
 require "schemagic/version"
+require "schemagic/errors"
 require "schemagic/railtie"
 require "schemagic/utility"
 
