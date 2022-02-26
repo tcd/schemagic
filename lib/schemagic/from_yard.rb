@@ -11,5 +11,10 @@ module Schemagic
       V3.generate()
     end
 
+    # @return [void``]
+    def self.debug()
+      binding.pry()
+    end
+
   end
 end

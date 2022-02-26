@@ -1,3 +1,4 @@
+require "pry"
 require "yard"
 
 require "schemagic/version"
