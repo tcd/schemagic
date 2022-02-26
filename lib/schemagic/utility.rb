@@ -37,5 +37,10 @@ module Schemagic
       return path.to_s()
     end
 
+    # @return [void]
+    def self.load_models()
+      Dir[Rails.root.join("app/models/**/*.rb")].each { |model| require_relative model }
+    end
+
   end
 end

@@ -3,17 +3,6 @@ module Schemagic
     # Processes a single attribute belonging to a Model.
     class Attribute
 
-      # @return [String]
-      TIMESTAMP_NOTE = "An ISO 8601 DateTime value".freeze()
-
-      # @return [Array<String>]
-      READONLY_PROPERTIES = [
-        "id",
-        "display_name",
-        "created_at",
-        "updated_at",
-      ].freeze()
-
       # @return [YARD::CodeObjects::ClassObject] YARD data about the class the method belongs to
       attr_accessor(:class_code_object)
 
@@ -134,7 +123,7 @@ module Schemagic
 
       # @return [void]
       def determine_if_read_only()
-        if READONLY_PROPERTIES.include?(self.name)
+        if Helpers::READONLY_PROPERTIES.include?(self.name)
           self.is_read_only = true
           return
         end
@@ -159,8 +148,8 @@ module Schemagic
       def determine_type()
         self.ruby_type = self.find_tag("return")&.types&.first()
         outer_ruby_type = self.ruby_type.split(/[<{]/).first()
-        self.json_schema_type = V3.type_map[outer_ruby_type] || outer_ruby_type
-        if (fmt = V3.time_format_map[self.ruby_type])
+        self.json_schema_type = Helpers.type_map[outer_ruby_type] || outer_ruby_type
+        if (fmt = Helpers.time_format_map[self.ruby_type])
           self.format = fmt
           self.description = self.description.blank? ? TIMESTAMP_NOTE : "#{self.description} (#{TIMESTAMP_NOTE})".strip()
         end

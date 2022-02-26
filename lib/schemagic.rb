@@ -1,3 +1,6 @@
+require "fileutils"
+require "pathname"
+
 require "pry"
 require "yard"
 

@@ -7,9 +7,7 @@ namespace(:schemagic) do
 
   desc("Generate JSON schema from YARD doc comments")
   task(:from_yard) do
-    binding.pry
-    # Schemagic::FromYard.generate()
-    Schemagic::FromYard.debug()
+    Schemagic::FromYard.generate()
   end
 
 end

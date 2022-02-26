@@ -3,7 +3,7 @@ module Schemagic
   module Errors
 
     # Exceptions raised by Schemagic inherit from Error.
-    class Error < StandardError; end
+    class SchemagicError < StandardError; end
 
   end
 end

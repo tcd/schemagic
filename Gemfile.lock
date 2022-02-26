@@ -1,7 +1,8 @@
 PATH
   remote: .
   specs:
-    schemagic (0.1.4)
+    schemagic (0.1.7)
+      pry (~> 0.14.1)
       rails (>= 7.0.2.2)
       yard (~> 0.9.27)
 
@@ -210,7 +211,6 @@ PLATFORMS
   x86_64-darwin-19
 
 DEPENDENCIES
-  pry (~> 0.14.1)
   rubocop (~> 1.25)
   schemagic!
   solargraph (~> 0.44.3)

@@ -1,6 +1,18 @@
 module Schemagic
   module FromYard
-    class V3
+    # Helpers
+    class Helpers
+
+      # @return [String]
+      TIMESTAMP_NOTE = "An ISO 8601 DateTime value".freeze()
+
+      # @return [Array<String>]
+      READONLY_PROPERTIES = [
+        "id",
+        "display_name",
+        "created_at",
+        "updated_at",
+      ].freeze()
 
       # FIXME: Handle Arrays and types defined with brackets & braces
       #
@@ -33,33 +45,6 @@ module Schemagic
           "Time"     => "time",
           "DateTime" => "date-time",
         }
-      end
-
-      # @return [void]
-      def self.generate()
-        Rails.application.eager_load!()
-        yard_path = Rails.root.join(".yardoc").to_s()
-        registry  = YARD::Registry.load(yard_path)
-        models = [
-          *ApplicationRecord.descendants,
-        ]
-        models.map(&:to_s).each do |name|
-          descendant = Schema.new(registry, name)
-          if descendant.is_valid?
-            descendant.parse_attributes()
-            puts(Schemagic::Utility.save_to_file(JSON.pretty_generate(descendant.to_h), "schema/#{name.underscore}.json", add_timestamp: false))
-          end
-        end
-        return nil
-      end
-
-      # @return [void]
-      def self.debug()
-        Rails.application.eager_load!()
-        yard_path = Rails.root.join(".yardoc").to_s
-        registry  = YARD::Registry.load(yard_path)
-        binding.pry
-        return nil
       end
 
     end

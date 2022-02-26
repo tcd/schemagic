@@ -1,0 +1,50 @@
+module Schemagic
+  module FromYard
+    # Generate JSON schemas for Rails models.
+    class Generator
+
+      # @return [void]
+      def self.generate()
+
+        # Rails.application.eager_load!()
+        Schemagic::Utility.load_models()
+
+        yard_path = Rails.root.join(".yardoc").to_s()
+        registry  = YARD::Registry.load(yard_path)
+        models    = [*ApplicationRecord.descendants]
+
+        models.map(&:to_s).each do |name|
+          descendant = Schema.new(registry, name)
+          if descendant.is_valid?()
+            descendant.parse_attributes()
+            path = save_schema_to_file(descendant.to_h, name.underscore)
+            puts("schema generated: '#{path}'")
+          end
+        end
+
+        return nil
+      end
+
+      # @return [String]
+      def self.save_schema_to_file(schema, name)
+        data = JSON.pretty_generate(schema)
+        file_name = "#{name}.json"
+        path = Schemagic.config.data_folder_path.join(file_name)
+        FileUtils.mkdir_p(path.parent)
+        File.write(path, data, mode: "w+")
+        return path
+      end
+
+      # @return [void]
+      def self.debug()
+        # Rails.application.eager_load!()
+        Schemagic::Utility.load_models()
+        yard_path = Rails.root.join(".yardoc").to_s
+        registry  = YARD::Registry.load(yard_path)
+        binding.pry
+        return nil
+      end
+
+    end
+  end
+end

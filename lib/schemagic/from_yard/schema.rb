@@ -46,7 +46,7 @@ module Schemagic
       # @param registry [YARD::Registry]
       # @param name [String]
       #
-      # @return [void]
+      # @return [Schemagic::FromYard::Schema]
       def initialize(registry, name)
         self.registry    = registry
         self.name        = name
@@ -59,7 +59,7 @@ module Schemagic
         self.type                  = "object"
         self.additional_properties = false
 
-        self.id          = "https://combo-notebook.dunston.io/api/v2/schema/#{name.gsub('::', '').underscore.dasherize}.json"
+        self.id          = "#{Schemagic.config.schema_url}/#{name.gsub('::', '').underscore.dasherize}.json"
         self.kind        = self.name.gsub("::", "")
         self.title       = self.name.gsub("::", "").titleize
         self.description = self.code_object&.docstring unless self.code_object&.docstring.blank?()
@@ -113,7 +113,7 @@ module Schemagic
             .meths
             .filter { |meth| meth.group == "Attributes" }
             .reject { |a| a.name.to_s =~ /\=\Z/ }
-            .each { |a| self.parse_attribute(a) }
+            .each   { |a| self.parse_attribute(a) }
       end
 
       # @param a [Object]
