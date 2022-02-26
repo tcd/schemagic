@@ -47,22 +47,7 @@ module Schemagic
           descendant = Schema.new(registry, name)
           if descendant.is_valid?
             descendant.parse_attributes()
-            puts(Lib::Util.save_to_file(JSON.pretty_generate(descendant.to_h), "schema/#{name.underscore}.json", add_timestamp: false))
-          end
-        end
-        return nil
-      end
-
-      # @return [void]
-      def self.generate_json_models()
-        Rails.application.eager_load!()
-        yard_path = Rails.root.join(".yardoc").to_s
-        registry  = YARD::Registry.load(yard_path)
-        Models::Json::JsonRecord.descendants.map(&:to_s).each do |name|
-          descendant = Schema.new(registry, name)
-          if descendant.is_valid?
-            descendant.parse_attributes()
-            puts(Lib::Util.save_to_file(JSON.pretty_generate(descendant.to_h), "schema/json/#{name.underscore}.json"))
+            puts(Schemagic::Utility.save_to_file(JSON.pretty_generate(descendant.to_h), "schema/#{name.underscore}.json", add_timestamp: false))
           end
         end
         return nil

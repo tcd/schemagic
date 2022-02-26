@@ -11,10 +11,5 @@ module Schemagic
       V3.generate()
     end
 
-    # @return [void]
-    def self.generate_json_models()
-      V3.generate_json_models()
-    end
-
   end
 end
