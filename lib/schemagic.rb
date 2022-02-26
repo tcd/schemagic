@@ -4,7 +4,7 @@ require "schemagic/config"
 require "schemagic/utility"
 # require "schemagic/from_yard"
 require "schemagic/railtie"
-require "schemagic/engine"
+# require "schemagic/engine"
 
 # Generate JSON schemas from Rails models & Rails models from JSON schemas.
 module Schemagic

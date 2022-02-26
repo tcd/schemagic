@@ -1,6 +1,6 @@
 module Schemagic
   # Generate an initializer file for Schemagic.
-  class InitGenerator < Rails::Generators::Base
+  class InitializerGenerator < Rails::Generators::Base
 
     desc("This generator creates an initializer file at 'config/initializers/schemagic.rb' for Schemagic")
 
