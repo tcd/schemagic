@@ -1,7 +1,7 @@
 Description: "Creates an initializer file at 'config/initializers/schemagic.rb' for Schemagic."
 
 Example: >
-    `rails g schemagen:init`
+    `rails g schemagic:init`
 
     This will create:
         config/initializers/schemagic.rb
