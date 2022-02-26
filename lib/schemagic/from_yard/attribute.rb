@@ -109,14 +109,14 @@ module Schemagic
 
       # @return [void]
       def determine_if_required()
-        if find_tag(self.method_code_object, "required")
+        if find_tag("required")
           self.is_required = true
         end
       end
 
       # @return [void]
       def determine_if_deprecated()
-        if find_tag(self.method_code_object, "deprecated")
+        if find_tag("deprecated")
           self.is_deprecated = true
         end
       end
@@ -134,7 +134,7 @@ module Schemagic
 
       # @return [void]
       def determine_default_value()
-        if (default = find_tag(self.method_code_object, "default_value"))
+        if (default = find_tag("default_value"))
           case self.ruby_type
           when "String"  then self.default_value = default.text
           when "Integer" then self.default_value = default.text.to_i()
@@ -151,7 +151,7 @@ module Schemagic
         self.json_schema_type = Helpers.type_map[outer_ruby_type] || outer_ruby_type
         if (fmt = Helpers.time_format_map[self.ruby_type])
           self.format = fmt
-          self.description = self.description.blank? ? TIMESTAMP_NOTE : "#{self.description} (#{TIMESTAMP_NOTE})".strip()
+          self.description = self.description.blank? ? Helpers::TIMESTAMP_NOTE : "#{self.description} (#{Helpers::TIMESTAMP_NOTE})".strip()
         end
 
       end
