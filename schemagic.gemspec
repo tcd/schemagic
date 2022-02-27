@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.description = spec.summary
   spec.license     = "MIT"
 
-  spec.required_ruby_version = ">= 3.1.0"
+  spec.required_ruby_version = ">= 2.7.0"
 
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = "#{spec.homepage}.git"
@@ -22,7 +22,7 @@ Gem::Specification.new do |spec|
   end
 
   spec.add_dependency("rails", ">= 7.0.2.2")
-  spec.add_dependency("yard", "~> 0.9.27")
+  spec.add_dependency("yard", ">= 0.9.0")
 
   spec.add_development_dependency("pry", "~> 0.14.1")
   spec.add_development_dependency("rubocop", "~> 1.25")

@@ -1,5 +1,5 @@
 AllCops:
-  TargetRubyVersion: 3.1.1
+  TargetRubyVersion: 2.7.0
 
 # Don't leave calls to pry lying around.
 Lint/Debugger:
