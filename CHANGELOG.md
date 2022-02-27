@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add Rake task `schemagic:install` so users don't have to use the generator directly.
 - Added `YardHelpers` so we don't have to go through Rake to call YARD.
 ### Changed
+- Remove minimum version for Rails.
 - Update minimum Ruby version to `2.7.0`.
 - Update minimum YARD version.
 - Update the readme.

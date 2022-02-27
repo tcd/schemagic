@@ -21,7 +21,7 @@ Gem::Specification.new do |spec|
     Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
   end
 
-  spec.add_dependency("rails", ">= 7.0.2.2")
+  spec.add_dependency("rails")
   spec.add_dependency("yard", ">= 0.9.0")
 
   spec.add_development_dependency("pry", "~> 0.14.1")
