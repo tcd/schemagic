@@ -7,6 +7,7 @@ require "schemagic/version"
 require "schemagic/errors"
 require "schemagic/config"
 require "schemagic/utility"
+require "schemagic/yard_helpers"
 require "schemagic/from_yard"
 require "schemagic/railtie"
 

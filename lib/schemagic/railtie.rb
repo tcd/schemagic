@@ -2,11 +2,7 @@ module Schemagic
   class Railtie < ::Rails::Railtie
 
     rake_tasks do
-      rake_tasks do
-        # load "tasks/production/yard_tasks.rake"
-        # load "tasks/production/schemagic_tasks.rake"
-        Dir["tasks/production/*.rake"].each { |rake| load rake }
-      end
+      load "tasks/production_tasks.rake"
     end
 
     generators do
