@@ -12,3 +12,4 @@
 
 ignore
 **/.yardoc
+coverage
