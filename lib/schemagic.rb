@@ -1,7 +1,6 @@
 require "fileutils"
 require "pathname"
 
-require "pry"
 require "yard"
 
 require "schemagic/version"
