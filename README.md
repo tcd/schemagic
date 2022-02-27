@@ -12,22 +12,28 @@ TODO: usage
 
 ## Installation
 
-Add this line to your application's Gemfile:
+### 1. Add this line to your application's Gemfile:
 
 ```ruby
-gem "schemagic"
+gem "schemagic", github: "tcd/schemagic" # issues with Google Authenticator & RubyGems; have not published yet
 ```
 
-Install by running:
+### 2. Install by running:
 
 ```bash
 bundle install
 ```
 
-Generate `config/initializers/schemagic.rb` for configuration:
+### 3. Generate an initializers for configuration:
 
 ```bash
-rails g schemagic:initializer
+rails schemagic:install
+```
+
+### 4. Generate some JSON schemas:
+
+```bash
+rails schemagic:from_yard
 ```
 
 
