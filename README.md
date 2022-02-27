@@ -1,12 +1,17 @@
 # Schemagic
 
-TODO: Short description and motivation.
+![Ruby Version](https://img.shields.io/badge/Ruby->=%202.7.0-CC342D.svg)
+[![License](https://img.shields.io/github/license/tcd/eddy)](https://github.com/tcd/schemagic/blob/master/LICENSE)
+
+Generate JSON schemas for Rails models using [YARD](https://github.com/lsegal/yard) doc comments.
+
+***WIP:** Generate Rails models from JSON schemas.*
 
 
 
-## Usage
+<!-- ## Usage
 
-TODO: usage
+TODO: usage -->
 
 
 
@@ -37,7 +42,8 @@ rails schemagic:from_yard
 ```
 
 
-## Contributing
+
+<!-- ## Contributing
 
 TODO: Contribution directions go here.
 
@@ -45,7 +51,7 @@ TODO: Contribution directions go here.
 
 ```bash
 ./bin/test
-```
+``` -->
 
 
 

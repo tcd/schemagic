@@ -7,7 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 
 
-## [0.3.0] - unreleased
+## [0.3.1] - 2022-02-27
+### Changed
+- Update the readme.
+
+
+
+## [0.3.0] - 2022-02-27
 ### Added
 - Add Rake task `schemagic:install` so users don't have to use the generator directly.
 - Added `YardHelpers` so we don't have to go through Rake to call YARD.
