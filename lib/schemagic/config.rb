@@ -18,9 +18,10 @@ module Schemagic
       else
         self.env = "development"
         self.data_folder = nil
+        # self.data_folder = File.join(Dir.pwd(), "tmp", "schemagic", "schema")
+        self.data_folder = File.join(Dir.pwd(), "app", "schema")
         self.schema_url = ""
-        # self.schema_url = "https://raw.githubusercontent.com/[USERNAME]/[REPO]/master/#{config.data_folder}"
-        # self.data_folder = File.join(Dir.pwd(), "app", "schema")
+        # self.schema_url = "https://raw.githubusercontent.com/[USERNAME]/[REPO]/master/path/to/schema/folder"
       end
     end
 

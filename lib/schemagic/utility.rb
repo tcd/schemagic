@@ -40,11 +40,15 @@ module Schemagic
     # @return [void]
     def self.load_models()
       Dir[Rails.root.join("app/models/**/*.rb")].each { |model| require_relative model }
+    rescue NameError => _e
+      return nil
     end
 
     # @return [Pathname]
     def self.yard_db_folder()
       return Rails.root.join("tmp", "schemagic", ".yardoc").to_s()
+    rescue NameError => _e
+      return nil
     end
 
   end
