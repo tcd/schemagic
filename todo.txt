@@ -1,1 +1,2 @@
 x 2022-02-27 2022-02-26 Move initializer generator to a rake task
+2022-02-27 decouple from Rails (at least for development)
