@@ -1,5 +1,5 @@
 require "yard"
-require "schemagic/utility"
+require "schemagic"
 
 # Models
 YARD::Tags::Library.define_tag("Namespace", :namespace)

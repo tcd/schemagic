@@ -7,4 +7,4 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 # require "yard"
 # require "schemagic/utility"
 
-Dir["lib/tasks/**/*.rake"].each { |rake| load rake }
+Dir["lib/tasks/development/*.rake"].each { |rake| load rake }
