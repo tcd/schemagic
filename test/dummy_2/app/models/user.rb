@@ -30,6 +30,18 @@ class User < ApplicationRecord
 
   # @!endgroup Attributes
 
+  # =====================================================================
+  # Associations
+  # =====================================================================
+
+  # @!group Associations
+
+  # @!attribute posts
+  #   @return [Array<Post>]
+  has_many(:posts)
+
+  # @!endgroup Associations
+
   # ============================================================================
   # Instance Methods
   # ============================================================================
